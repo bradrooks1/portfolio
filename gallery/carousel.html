@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Carousel</title>
+<style>
+    #imageContainer {
+        width: 100%;
+        text-align: center;
+    }
+    #carouselImage {
+        width: 80%;
+        height: auto;
+        /* Add more styles if needed */
+    }
+</style>
+</head>
+<body>
+
+<div id="imageContainer">
+    <img id="carouselImage" src="dark1.png" alt="Image Carousel">
+</div>
+
+<script>
+    // Array of image paths
+    const images = [
+        'dark1.png',
+        'dark2.png',
+		'bright.png',
+        // Add more image paths here
+    ];
+
+    let currentIndex = 0;
+
+    function cycleImages() {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        document.getElementById('carouselImage').src = images[currentIndex];
+    }
+
+    // Change image every 5 seconds (5000 milliseconds)
+    setInterval(cycleImages, 5000);
+</script>
+
+</body>
+</html>
